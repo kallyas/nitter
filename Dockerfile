@@ -11,7 +11,7 @@ RUN apk update \
     && strip -s nitter \
     && nimble scss
 
-FROM alpine
+FROM alpine:3.15.4
 WORKDIR /src/
 RUN apk --no-cache add pcre-dev sqlite-dev
 COPY --from=nim /src/nitter/nitter /src/nitter/nitter.conf ./
